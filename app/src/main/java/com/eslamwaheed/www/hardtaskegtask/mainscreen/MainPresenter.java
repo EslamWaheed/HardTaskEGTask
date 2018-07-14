@@ -2,7 +2,6 @@ package com.eslamwaheed.www.hardtaskegtask.mainscreen;
 
 import android.support.annotation.Nullable;
 
-
 import com.eslamwaheed.www.hardtaskegtask.apimodels.modelinterfaces.CategoriesInt;
 import com.eslamwaheed.www.hardtaskegtask.pojos.Category;
 import com.eslamwaheed.www.hardtaskegtask.utils.CustomEvent;
@@ -31,8 +30,8 @@ public class MainPresenter implements MainMVP.Presenter {
     }
 
     @Override
-    public void goToDetailActivity() {
-
+    public void goToDetailActivity(Category category) {
+        view.onCardListItemClicked(category);
     }
 
     @Override
@@ -53,7 +52,7 @@ public class MainPresenter implements MainMVP.Presenter {
     }
 
     @Subscribe
-    public void MoviesListOnLoad(CustomEvent event) {
+    public void CategoriesListOnLoad(CustomEvent event) {
         if (event.getEventType() == CustomEventType.GETCATEGORIES)
             view.setResultList((List<Category>) event.getObject());
     }

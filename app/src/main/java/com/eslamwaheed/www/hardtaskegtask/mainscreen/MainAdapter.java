@@ -42,7 +42,7 @@ public class MainAdapter extends RecyclerView.Adapter<MainAdapter.ViewHolder> {
 
     @Override
     public void onBindViewHolder(@NonNull final ViewHolder holder, int position) {
-        Category category = categories.get(position);
+        final Category category = categories.get(position);
 
         Picasso.with(context).load(category.getPhoto()).into(holder.Photo);
 
@@ -56,7 +56,7 @@ public class MainAdapter extends RecyclerView.Adapter<MainAdapter.ViewHolder> {
         holder.view.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                presenter.goToDetailActivity();
+                presenter.goToDetailActivity(category);
             }
         });
     }

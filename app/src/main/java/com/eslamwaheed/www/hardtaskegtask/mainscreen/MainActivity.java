@@ -1,7 +1,6 @@
 package com.eslamwaheed.www.hardtaskegtask.mainscreen;
 
 import android.os.Bundle;
-import android.support.v7.app.ActionBar;
 import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.GridLayoutManager;
 import android.support.v7.widget.RecyclerView;
@@ -9,6 +8,7 @@ import android.support.v7.widget.Toolbar;
 
 import com.eslamwaheed.www.hardtaskegtask.R;
 import com.eslamwaheed.www.hardtaskegtask.application.App;
+import com.eslamwaheed.www.hardtaskegtask.mainscreen.detailscreen.DetailFragment;
 import com.eslamwaheed.www.hardtaskegtask.pojos.Category;
 
 import java.util.List;
@@ -51,12 +51,20 @@ public class MainActivity extends AppCompatActivity implements MainMVP.View {
     }
 
     @Override
-    public void onCardListItemClicked() {
+    public void onCardListItemClicked(Category category) {
+        DetailFragment detailFragment = new DetailFragment();
+        Bundle bundle = new Bundle();
+        bundle.putSerializable("category", category);
+        detailFragment.setArguments(bundle);
 
+        getSupportFragmentManager()
+                .beginTransaction()
+                .add(R.id.content_frame, detailFragment)
+                .commit();
     }
 
     @Override
-    public void setResultList(List<Category> resultList) {
-        adapter.refreshList(resultList);
+    public void setResultList(List<Category> categoryList) {
+        adapter.refreshList(categoryList);
     }
 }

@@ -9,7 +9,7 @@ public interface MainMVP {
 
     interface View {
 
-        void onCardListItemClicked();
+        void onCardListItemClicked(Category category);
 
         void setResultList(List<Category> resultList);
     }
@@ -17,7 +17,7 @@ public interface MainMVP {
     interface Presenter {
         void setView(View view);
 
-        void goToDetailActivity();
+        void goToDetailActivity(Category category);
 
         void loadCategories(int categoryId, int countryId);
 
