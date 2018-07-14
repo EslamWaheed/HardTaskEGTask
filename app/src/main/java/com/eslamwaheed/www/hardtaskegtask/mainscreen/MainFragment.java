@@ -44,6 +44,7 @@ public class MainFragment extends Fragment implements MainMVP.View {
 
         toolbar = fragmentView.findViewById(R.id.toolbar);
         ((AppCompatActivity) getActivity()).setSupportActionBar(toolbar);
+        ((AppCompatActivity) getActivity()).getSupportActionBar().setDisplayShowTitleEnabled(false);
 
         presenter.setView(this);
         recyclerView = fragmentView.findViewById(R.id.main_recyclerView);

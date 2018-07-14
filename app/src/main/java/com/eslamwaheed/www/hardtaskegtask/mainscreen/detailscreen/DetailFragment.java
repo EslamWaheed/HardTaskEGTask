@@ -60,6 +60,8 @@ public class DetailFragment extends Fragment implements DetailMVP.View {
 
         ((AppCompatActivity) getActivity()).setSupportActionBar(toolbar);
 
+        ((AppCompatActivity) getActivity()).getSupportActionBar().setDisplayShowTitleEnabled(false);
+
         Bundle bundle = this.getArguments();
 
         try {
