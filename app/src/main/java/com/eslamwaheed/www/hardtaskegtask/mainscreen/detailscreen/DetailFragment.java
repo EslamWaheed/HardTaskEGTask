@@ -81,7 +81,7 @@ public class DetailFragment extends Fragment implements DetailMVP.View {
 
 
         presenter.setView(this);
-        recyclerView = fragmentView.findViewById(R.id.main_recyclerView);
+        recyclerView = fragmentView.findViewById(R.id.detail_recyclerView);
 
         layoutManager = new GridLayoutManager(context, 2);
 
@@ -90,6 +90,8 @@ public class DetailFragment extends Fragment implements DetailMVP.View {
         adapter = new DetailAdapter(presenter, context);
 
         recyclerView.setAdapter(adapter);
+
+        this.setResultList();
 
         return fragmentView;
     }

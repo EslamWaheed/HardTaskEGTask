@@ -10,7 +10,7 @@ public class DetailPresenter implements DetailMVP.Presenter {
     private DetailMVP.View view;
 
     public DetailPresenter() {
-        EventBus.getDefault().register(this);
+//        EventBus.getDefault().register(this);
     }
 
     @Override
@@ -20,12 +20,12 @@ public class DetailPresenter implements DetailMVP.Presenter {
 
     @Override
     public void register() {
-        if (!EventBus.getDefault().isRegistered(this))
-            EventBus.getDefault().register(this);
+//        if (!EventBus.getDefault().isRegistered(this))
+//            EventBus.getDefault().register(this);
     }
 
     @Override
     public void terminate() {
-        EventBus.getDefault().unregister(this);
+//        EventBus.getDefault().unregister(this);
     }
 }

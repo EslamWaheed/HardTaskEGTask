@@ -16,7 +16,7 @@ public class MainActivity extends AppCompatActivity {
         MainFragment mainFragment = new MainFragment();
         getSupportFragmentManager()
                 .beginTransaction()
-                .replace(R.id.content_frame, mainFragment)
+                .add(R.id.content_frame, mainFragment)
                 .commit();
     }
 
